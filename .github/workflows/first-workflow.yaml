@@ -1,7 +1,5 @@
 name: github-actions-first-wf
-
 on: [push]
-
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
@@ -11,4 +9,4 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g bats
-     - run: bats -v
+      - run: bats -v
