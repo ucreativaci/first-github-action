@@ -1,4 +1,4 @@
-name: github-actions-first-wf
+name: github-actions-first-wf2
 
 on: [push]
 
