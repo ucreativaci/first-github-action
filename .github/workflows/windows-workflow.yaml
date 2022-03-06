@@ -9,31 +9,37 @@ jobs:
       - uses: actions/checkout@v2
 
   check-versions:
+    needs: checkout-code
     runs-on: windows-machine
     steps:
       - run: ng version
 
   lint-test:
+    needs: check-versions
     runs-on: windows-machine
     steps:
       - run: ng lint
 
   unit-test:
+    needs: lint-test
     runs-on: windows-machine
     steps:
       - run: ng test
 
   build-app:
+    needs: unit-test  
     runs-on: windows-machine
     steps:
       - run: ng build
 
   deploy-app:
+    needs: build-app 
     runs-on: windows-machine
     steps:
       - run: xcopy dist\clase6 C:\inetpub\wwwroot\romell\dev /s /y /q
 
   completed-job:
+    needs: deploy-app
     runs-on: windows-machine
     steps:
       - run: echo "Job completed"
