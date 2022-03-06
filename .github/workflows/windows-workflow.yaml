@@ -1,0 +1,14 @@
+name: github-actions-first-wf
+
+on: [push]
+
+jobs:
+  checkout-code:
+    runs-on: windows-machine
+    steps:
+      - uses: actions/checkout@v2
+
+  check-versions:
+    runs-on: windows-machine
+    steps:
+      - uses: ng version
