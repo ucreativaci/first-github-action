@@ -11,4 +11,4 @@ jobs:
   check-versions:
     runs-on: windows-machine
     steps:
-      - uses: ng version
+      - run: ng version
